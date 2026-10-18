@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-cormorant), "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --color-canvas: #FAF7F2;
+  --color-canvas-subtle: #F3EDE4;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #FBF9F5;
+  --color-surface-card: #FFFFFF;
+  --color-surface-warm: #F6F0E8;
+  
+  --color-gold: #B68A35;
+  --color-gold-light: #CFA858;
+  --color-gold-dark: #8C6518;
+  --color-gold-muted: rgba(182, 138, 53, 0.12);
+  
+  --color-crimson: #8C2222;
+  --color-crimson-light: #A83232;
+  --color-crimson-muted: rgba(140, 34, 34, 0.08);
+  
+  --color-marigold: #C97A1E;
+  --color-terracotta: #A65738;
+  
+  --color-text-main: #1C1917;
+  --color-text-muted: #6B6257;
+  --color-text-subtle: #8C8276;
+}
+
+:root {
+  --background: #FAF7F2;
+  --foreground: #1C1917;
+  --gold: #B68A35;
+  --crimson: #8C2222;
+  --border-subtle: rgba(140, 110, 70, 0.15);
+  --border-gold: rgba(182, 138, 53, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #FAF7F2;
+  color: #1C1917;
+  color-scheme: light;
+}
+
+body {
+  background-color: #FAF7F2;
+  color: #1C1917;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Luxury Editorial Indian Typography */
+@utility hero-headline {
+  font-family: var(--font-serif);
+  font-weight: 350;
+  letter-spacing: -0.02em;
+  font-size: clamp(2.125rem, 4.5vw + 0.75rem, 5.25rem);
+  line-height: 1.08;
+}
+
+.hero-headline {
+  font-family: var(--font-serif);
+  font-weight: 350;
+  letter-spacing: -0.02em;
+  font-size: clamp(2.125rem, 4.5vw + 0.75rem, 5.25rem);
+  line-height: 1.08;
+}
+
+.font-editorial-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.font-editorial-serif {
+  font-family: var(--font-serif);
+}
+
+.font-editorial-body {
+  font-family: var(--font-sans);
+  letter-spacing: 0.01em;
+}
+
+/* Royal Jharokha Arch styling */
+.arch-jharokha {
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+}
+
+.arch-jharokha-subtle {
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+/* Gold Underline Link effect */
+.hover-gold-link {
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.hover-gold-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1.5px;
+  bottom: -2px;
+  left: 0;
+  background-color: #B68A35;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-gold-link:hover::after {
+  width: 100%;
+}
+
+/* Custom Royal Sandalwood Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D9CEBE;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B68A35;
+}
+
+/* Selection Color: Kundan Gold */
+::selection {
+  background-color: #DFC285;
+  color: #1C1917;
+}
+
+/* Warm Card Soft Shadow */
+.royal-shadow {
+  box-shadow: 0 10px 30px -5px rgba(100, 75, 45, 0.07), 0 2px 6px -1px rgba(100, 75, 45, 0.04);
+}
+
+.royal-shadow-hover:hover {
+  box-shadow: 0 20px 40px -10px rgba(100, 75, 45, 0.12), 0 4px 12px -2px rgba(100, 75, 45, 0.06);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
